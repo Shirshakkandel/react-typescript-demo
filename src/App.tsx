@@ -8,6 +8,9 @@ import { Oscar } from "./components/props/Oscar";
 import { ButtonOnClick } from "./components/props/ButtonOnClick";
 import { Container } from "./components/props/Container";
 import { Counter } from "./components/state/Counter";
+import { User } from "./components/context/User";
+import { UserContext, UserContextProvider } from "./components/context/UserContext";
+import { Toast } from "./components/templateLiteals/Toast";
 
 function App() {
   //it is logic part where data manupulation happend
@@ -32,6 +35,13 @@ function App() {
 
       <Container styles={{ border: "1px solid black", padding: "1rem" }} />
       <Counter />
+
+      {/* Context  */}
+      <UserContextProvider>
+        <User />
+      </UserContextProvider>
+
+      <Toast position="center" />
     </div>
   );
 }
